@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Blue Archive Derivative</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      box-shadow: none;
+      border: none;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      background: none;
+      touch-action: pan-y;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+  <script>
+    window.addEventListener('touchmove', function (e) {
+      if (e.touches.length >= 2) {
+        e.preventDefault();
+      }
+    }, { passive: false, capture: true });
+    window.addEventListener('wheel', function (e) {
+      if (e.ctrlKey) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  </script>
+</body>
+
+</html>

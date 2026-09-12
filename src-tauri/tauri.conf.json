@@ -1,0 +1,40 @@
+{
+  "$schema": "./schema.json",
+  "productName": "BlueArchiveDerivative",
+  "version": "0.1.1",
+  "identifier": "cn.czgrzx.ba",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build && node template/to.js",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "BlueArchiveDerivative",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "android": {
+      "autoIncrementVersionCode": false,
+      "minSdkVersion": 24
+    },
+    
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
